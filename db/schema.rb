@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170228173020) do
+=======
+ActiveRecord::Schema.define(version: 20170216124013) do
+>>>>>>> 3a97b84b2bc89f5f5073686838e5af9d45bfb244
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.integer  "age"
+<<<<<<< HEAD
     t.string   "family_name"
     t.string   "phone_number"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> 3a97b84b2bc89f5f5073686838e5af9d45bfb244
   end
 
 end
