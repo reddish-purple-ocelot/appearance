@@ -27,9 +27,28 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
+  # config.action_mailer.delivery_method = :test
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'myhost.com' }
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address            => 'smtp.myhost.com',
+    :port               => 587,
+    :domain             => 'myhost.com',
+    :authentication     => :login,
+    :enable_starttls_auto => false,
+    :tls                  => false,
+    :openssl_verify_mode  => 'none',
+    :ssl => false,
+    :user_name          => "val.slyun@gmail.com",
+    :password           => "mypassword"
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
