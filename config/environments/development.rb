@@ -27,7 +27,6 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-<<<<<<< HEAD
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
@@ -50,11 +49,6 @@ Rails.application.configure do
     :user_name          => "val.slyun@gmail.com",
     :password           => "mypassword"
   }
-=======
-  config.action_mailer.raise_delivery_errors = false
-
-  config.action_mailer.perform_caching = false
->>>>>>> 3a97b84b2bc89f5f5073686838e5af9d45bfb244
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
