@@ -1,16 +1,21 @@
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: appearance_development
+  username: valya
+  password: valya
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: db_test
+  username: valya
+  password: valya
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: db_production
