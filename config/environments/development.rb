@@ -33,21 +33,16 @@ Rails.application.configure do
   # config.action_mailer.delivery_method = :test
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'myhost.com' }
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
-    :address            => 'smtp.myhost.com',
+    :address            => 'smtp.gmail.com',
     :port               => 587,
-    :domain             => 'myhost.com',
-    :authentication     => :login,
-    :enable_starttls_auto => false,
-    :tls                  => false,
-    :openssl_verify_mode  => 'none',
-    :ssl => false,
-    :user_name          => "val.slyun@gmail.com",
-    :password           => "mypassword"
+    :domain             => 'localhost',
+    :authentication     => :plain,
+    :user_name          => ENV['GMAIL_USERNAME'],
+    :password           => ENV['GMAIL_PASSWORD']
   }
 
   # Print deprecation notices to the Rails logger.
