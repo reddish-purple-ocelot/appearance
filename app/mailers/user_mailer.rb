@@ -10,8 +10,11 @@ class UserMailer < ApplicationMailer
     # from       "webmarter@example.com"
     # subject    "Thank's for Registration"
     # body       :user => user
+
+    @greeting = "Hi"
+
     @user = user
-    mail(to: @user.email, subject: "welcome")
+    mail(to: @user.email,from: "from@example.com", subject: "welcome")
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -20,8 +23,9 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.bar.subject
   #
   def bar(user)
+    @user = user
     @greeting = "Hi"
 
-    mail to: user.email
+    mail( to: user.email, subject: "I am in the bar")
   end
 end
