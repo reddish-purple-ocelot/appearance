@@ -34,15 +34,15 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
+  APP = YAML.load_file("#{Rails.root}/config/application.yml")
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
     :address            => 'smtp.gmail.com',
     :port               => 587,
     :domain             => 'localhost',
     :authentication     => :plain,
-    :user_name          => ENV['GMAIL_USERNAME'],
-    :password           => ENV['GMAIL_PASSWORD']
+    :user_name          => APP['gmail_username'],
+    :password           => APP['gmail_password']
   }
 
   # Print deprecation notices to the Rails logger.
